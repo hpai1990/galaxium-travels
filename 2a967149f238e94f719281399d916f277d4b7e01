@@ -1,0 +1,7 @@
+{"id":"fa014f9c-f18b-4de9-91ad-4d81ef08bb4d","ts":"2026-05-11T10:02:11.387Z","path":"/workspace/booking_system_backend/services/email.py","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
+{"id":"58b4d413-fc94-44e8-9388-4b87fca716b8","ts":"2026-05-11T10:02:23.844Z","path":"/workspace/booking_system_backend/models.py","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
+{"id":"5a317a16-08ac-4962-aa54-8d1cd9c13041","ts":"2026-05-11T10:02:33.033Z","path":"/workspace/booking_system_backend/schemas.py","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
+{"id":"698eca24-471f-4dae-94fb-d455306f6cba","ts":"2026-05-11T10:02:42.265Z","path":"/workspace/booking_system_backend/requirements.txt","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
+{"id":"99b5532f-fa9b-408c-be1c-148471c22fa1","ts":"2026-05-11T10:02:51.095Z","path":"/workspace/booking_system_backend/services/booking.py","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
+{"id":"8a27ac6f-6e9a-4d2a-88ac-5fe2554f09d1","ts":"2026-05-11T10:02:58.173Z","path":"/workspace/booking_system_backend/services/booking.py","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
+{"id":"b8f4ad30-d202-4d69-a967-968f014f0838","ts":"2026-05-11T10:03:42.573Z","path":"/workspace/booking_system_backend/tests/test_email_service.py","version":"1.0.0","taskID":"7235a0c4-2b9e-41d7-b2e2-5bda60e7dcd9"}
