@@ -2,6 +2,10 @@ from sqlalchemy.orm import Session
 from datetime import datetime
 from models import User, Flight, Booking
 from schemas import BookingOut, ErrorResponse, SeatClass
+from services.email import get_email_service
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 # Price multipliers for each seat class
@@ -86,6 +90,32 @@ def book_flight(db: Session, user_id: int, name: str, flight_id: int, seat_class
     db.add(new_booking)
     db.commit()
     db.refresh(new_booking)
+    
+    # Send confirmation email
+    try:
+        email_service = get_email_service()
+        booking_reference = f"GT-{datetime.utcnow().year}-{new_booking.booking_id:05d}"
+        
+        email_sent = email_service.send_booking_confirmation(
+            to_email=user.email,
+            customer_name=user.name,
+            booking_reference=booking_reference,
+            destination=flight.destination,
+            departure_date=flight.departure_time,
+            return_date=flight.arrival_time,
+            passengers=1,
+            seat_class=seat_class,
+            price_paid=price_paid
+        )
+        
+        if email_sent:
+            logger.info(f"Confirmation email sent for booking {new_booking.booking_id}")
+        else:
+            logger.warning(f"Failed to send confirmation email for booking {new_booking.booking_id}")
+    except Exception as e:
+        # Don't fail the booking if email fails
+        logger.error(f"Error sending confirmation email for booking {new_booking.booking_id}: {e}", exc_info=True)
+    
     return BookingOut.model_validate(new_booking)
 
 
